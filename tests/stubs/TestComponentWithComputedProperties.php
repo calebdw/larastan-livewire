@@ -62,7 +62,9 @@ final class TestComponentWithComputedProperties extends Component
 
     /**
      * This is a comment.
+     *
      * @return array<int,string>
+     *
      * @deprecated Has a description.
      */
     public function getGetterStyleProperty(): array
