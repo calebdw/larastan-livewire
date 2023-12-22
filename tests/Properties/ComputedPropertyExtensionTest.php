@@ -179,7 +179,9 @@ final class ComputedPropertyExtensionTest extends PHPStanTestCase
             <<<'TXT'
                 /**
                  * This is a comment.
+                 *
                  * @return array<int,string>
+                 *
                  * @deprecated Has a description.
                  */
                 TXT,
