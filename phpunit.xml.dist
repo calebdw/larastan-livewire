@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" backupGlobals="false"
+    beStrictAboutTestsThatDoNotTestAnything="true" beStrictAboutOutputDuringTests="true"
+    colors="true" failOnRisky="true" failOnWarning="true" processIsolation="false"
+    stopOnError="false" stopOnFailure="false"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+    cacheDirectory=".phpunit.cache" backupStaticProperties="false">
+    <testsuites>
+        <testsuite name="Tests">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
