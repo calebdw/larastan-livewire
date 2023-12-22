@@ -1,3 +1,3 @@
 services:
-  - class: CalebDW\LarastanLivewire\Properties\AttributeComputedPropertyExtension
+  - class: CalebDW\LarastanLivewire\Properties\ComputedPropertyExtension
     tags: [phpstan.broker.propertiesClassReflectionExtension]
