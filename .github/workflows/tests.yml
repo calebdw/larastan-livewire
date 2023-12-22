@@ -1,0 +1,58 @@
+name: Tests
+
+on:
+  push:
+    paths-ignore:
+      - "**.md"
+      - 'docs/**'
+    branches:
+      - "**"
+  pull_request:
+    types: [ready_for_review, synchronize, opened]
+    paths-ignore:
+      - "**.md"
+      - 'docs/**'
+
+jobs:
+  tests:
+    strategy:
+      fail-fast: true
+      matrix:
+        php: [8.1, 8.2, 8.3]
+        livewire: [3.*]
+    name: PHP${{ matrix.php }} - Livewire${{ matrix.livewire }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: dom, curl, libxml, mbstring, zip, fileinfo
+          tools: composer:v2
+          coverage: none
+
+      - name: Check Composer configuration
+        run: composer validate --strict
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: dependencies-laravel-${{ matrix.laravel }}-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+          restore-keys: dependencies-laravel-${{ matrix.laravel }}-php-${{ matrix.php }}-composer-
+
+      - name: Install dependencies from composer.json
+        run: composer update --with='livewire/livewire:${{ matrix.livewire }}' --no-interaction --no-progress
+
+      - name: Check PSR-4 mapping
+        run: composer dump-autoload --optimize --strict-psr
+
+      - name: Execute tests
+        run: composer test
