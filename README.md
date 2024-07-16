@@ -56,4 +56,4 @@ Thank you for considering contributing! You can read the contribution guide [her
 
 ## License
 
-Larastan-Livewire is open-sourced software licensed under the [MIT license](LICENSE.md).
+Larastan-Livewire is open-sourced software licensed under the [MIT license](LICENSE).
