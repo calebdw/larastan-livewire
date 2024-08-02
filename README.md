@@ -1,7 +1,15 @@
-# Larastan-Livewire
-
-A [Larastan](https://github.com/larastan/larastan) / [PHPStan](https://phpstan.org) extension for [Livewire](https://livewire.laravel.com/).
-
+<div align="center">
+  <p>
+    <img src="/art/larastan_livewire.webp" alt="Larastan Livewire" width="40%">
+  </p>
+  <p>A <a href="https://github.com/larastan/larastan">Larastan</a> / <a href="https://phpstan.org">PHPStan</a> extension for <a href="https://livewire.laravel.com/">Laravel Livewire</a>.</p>
+  <p>
+    <a href="https://github.com/calebdw/larastan-livewire/actions/workflows/tests.yml"><img src="https://github.com/calebdw/larastan-livewire/actions/workflows/tests.yml/badge.svg" alt="Test Results"></a>
+    <a href="https://github.com/calebdw/larastan-livewire"><img src="https://img.shields.io/github/license/calebdw/larastan-livewire" alt="License"></a>
+    <a href="https://packagist.org/packages/calebdw/larastan-livewire"><img src="https://img.shields.io/packagist/v/calebdw/larastan-livewire.svg" alt="Packagist Version"></a>
+    <a href="https://packagist.org/packages/calebdw/larastan-livewire"><img src="https://img.shields.io/packagist/dt/calebdw/larastan-livewire.svg" alt="Total Downloads"></a>
+  </p>
+</div>
 
 ## Install
 
@@ -48,7 +56,6 @@ class ShowPost extends Component
         return Post::find($this->postId);
     }
 ```
-
 
 ## Contributing
 
