@@ -32,6 +32,10 @@ includes:
 
 ```php
 <?php
+
+use Livewire\Attributes\Computed;
+use Livewire\Component;
+
 class ShowPost extends Component
 {
     #[Computed]
@@ -48,6 +52,9 @@ The older, ["getter" style attributes](https://laravel-livewire.com/docs/2.x/pro
 
 ```php
 <?php
+
+use Livewire\Component;
+
 class ShowPost extends Component
 {
     // Computed Property
@@ -55,6 +62,7 @@ class ShowPost extends Component
     {
         return Post::find($this->postId);
     }
+}
 ```
 
 ## Contributing
