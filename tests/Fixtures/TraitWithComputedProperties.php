@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CalebDW\LarastanLivewire\Tests\stubs;
+namespace CalebDW\LarastanLivewire\Tests\Fixtures;
 
 use Livewire\Attributes\Computed;
 
@@ -17,5 +17,13 @@ trait TraitWithComputedProperties
     public function getTraitGetterProperty(): bool
     {
         return true;
+    }
+
+    public function testIntegration(): string
+    {
+        return $this->traitMethod
+            .$this->trait_method
+            .$this->traitGetter
+            .$this->trait_getter;
     }
 }

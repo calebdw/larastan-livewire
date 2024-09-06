@@ -20,10 +20,6 @@ final class ComputedPropertyExtension implements PropertiesClassReflectionExtens
             return false;
         }
 
-        if ($classReflection->isAbstract()) {
-            return false;
-        }
-
         if ($classReflection->hasNativeMethod($this->getterPropertyName($propertyName))) {
             return true;
         }

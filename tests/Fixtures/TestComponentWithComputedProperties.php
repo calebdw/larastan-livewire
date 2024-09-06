@@ -2,15 +2,12 @@
 
 declare(strict_types=1);
 
-namespace CalebDW\LarastanLivewire\Tests\stubs;
+namespace CalebDW\LarastanLivewire\Tests\Fixtures;
 
 use Livewire\Attributes\Computed;
-use Livewire\Component;
 
-final class TestComponentWithComputedProperties extends Component
+class TestComponentWithComputedProperties extends AbstractBaseComponent
 {
-    use TraitWithComputedProperties;
-
     public function notAComputedProperty(): bool
     {
         return true;
@@ -25,6 +22,8 @@ final class TestComponentWithComputedProperties extends Component
     #[Computed]
     protected function protectedMethod(): bool
     {
+        $this->privateMethod();
+
         return true;
     }
 
@@ -72,5 +71,28 @@ final class TestComponentWithComputedProperties extends Component
     public function getGetterStyleProperty(): array
     {
         return ['foo', 'bar'];
+    }
+
+    public function testIntegration(): string
+    {
+        return $this->privateMethod
+            .$this->private_method
+            .$this->protectedMethod
+            .$this->protected_method
+            .$this->property
+            .$this->propertyWithComments
+            .$this->property_with_comments
+            .$this->deprecatedProperty
+            .$this->deprecated_property
+            .$this->deprecatedPropertyWithDescription
+            .$this->deprecated_property_with_description
+            .$this->propertyWithGenerics[0]
+            .$this->property_with_generics[0]
+            .$this->getterStyle[0]
+            .$this->getter_style[0]
+            .$this->traitMethod
+            .$this->trait_method
+            .$this->traitGetter
+            .$this->trait_getter;
     }
 }
