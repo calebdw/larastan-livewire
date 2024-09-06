@@ -48,10 +48,12 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "scripts": {
-    "test:phpstan": "phpstan analyze --ansi",
+    "test:phpstan:src": "phpstan analyze --ansi",
+    "test:phpstan:integration": "phpstan analyze --ansi -c tests/phpstan-tests.neon",
     "test:phpunit": "phpunit --colors=always",
     "test": [
-      "@test:phpstan",
+      "@test:phpstan:src",
+      "@test:phpstan:integration",
       "@test:phpunit"
     ]
   }

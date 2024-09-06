@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace CalebDW\LarastanLivewire\Tests\Properties;
 
 use CalebDW\LarastanLivewire\Properties\ComputedPropertyExtension;
-use CalebDW\LarastanLivewire\Tests\stubs\TestComponentWithComputedProperties;
+use CalebDW\LarastanLivewire\Tests\Fixtures\TestComponentWithComputedProperties;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Testing\PHPStanTestCase;
 use PHPStan\Type\VerbosityLevel;
