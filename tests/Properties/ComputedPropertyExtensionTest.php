@@ -64,6 +64,24 @@ final class ComputedPropertyExtensionTest extends PHPStanTestCase
     }
 
     #[Test]
+    public function itRegistersComputedProperiesFromTraits(): void
+    {
+        $properties = [
+            'trait_method',
+            'traitMethod',
+            'trait_getter',
+            'traitGetter',
+        ];
+
+        foreach ($properties as $property) {
+            $this->assertTrue($this->reflectionExtension->hasProperty(
+                $this->classReflection,
+                $property,
+            ));
+        }
+    }
+
+    #[Test]
     public function itCanFindSnakeCaseProperties(): void
     {
         $this->assertTrue($this->reflectionExtension->hasProperty(

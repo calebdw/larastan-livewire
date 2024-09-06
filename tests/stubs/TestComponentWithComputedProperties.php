@@ -9,6 +9,8 @@ use Livewire\Component;
 
 final class TestComponentWithComputedProperties extends Component
 {
+    use TraitWithComputedProperties;
+
     public function notAComputedProperty(): bool
     {
         return true;
