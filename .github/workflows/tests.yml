@@ -1,3 +1,4 @@
+---
 name: Tests
 
 on:
@@ -7,11 +8,6 @@ on:
       - 'docs/**'
     branches:
       - "**"
-  pull_request:
-    types: [ready_for_review, synchronize, opened]
-    paths-ignore:
-      - "**.md"
-      - 'docs/**'
 
 jobs:
   tests:
