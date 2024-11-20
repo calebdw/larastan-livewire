@@ -8,7 +8,6 @@ use Illuminate\Support\Str;
 use Livewire\Attributes\Computed;
 use Livewire\Component;
 use PHPStan\Reflection\ClassReflection;
-use PHPStan\Reflection\ParametersAcceptorSelector;
 use PHPStan\Reflection\PropertiesClassReflectionExtension;
 use PHPStan\Reflection\PropertyReflection;
 
@@ -51,9 +50,7 @@ final class ComputedPropertyExtension implements PropertiesClassReflectionExtens
 
         $methodReflection = $classReflection->getNativeMethod($methodName);
 
-        $returnType = ParametersAcceptorSelector::selectSingle(
-            $methodReflection->getVariants(),
-        )->getReturnType();
+        $returnType = $methodReflection->getOnlyVariant()->getReturnType();
 
         return new ComputedProperty(
             declaringClass: $classReflection,

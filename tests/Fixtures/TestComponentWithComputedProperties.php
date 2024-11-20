@@ -22,9 +22,7 @@ class TestComponentWithComputedProperties extends AbstractBaseComponent
     #[Computed]
     protected function protectedMethod(): bool
     {
-        $this->privateMethod();
-
-        return true;
+        return $this->privateMethod();
     }
 
     #[Computed]
