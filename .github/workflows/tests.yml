@@ -14,7 +14,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [8.1, 8.2, 8.3]
+        php: [8.2, 8.3, 8.4]
         livewire: [3.*]
     name: PHP${{ matrix.php }} - Livewire${{ matrix.livewire }}
     runs-on: ubuntu-latest
@@ -41,8 +41,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: dependencies-laravel-${{ matrix.laravel }}-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
-          restore-keys: dependencies-laravel-${{ matrix.laravel }}-php-${{ matrix.php }}-composer-
+          key: dependencies-livewire-${{ matrix.livewire }}-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
+          restore-keys: dependencies-livewire-${{ matrix.livewire }}-php-${{ matrix.php }}-composer-
 
       - name: Install dependencies from composer.json
         run: composer update --with='livewire/livewire:${{ matrix.livewire }}' --no-interaction --no-progress
