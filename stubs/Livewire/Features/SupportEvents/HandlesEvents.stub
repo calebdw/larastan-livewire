@@ -12,7 +12,7 @@ trait HandlesEvents
     /**
      * @return array<string>
      */
-    protected function getListeners() {}
+    protected function getListeners();
 
     /**
      * @param string $event
@@ -20,5 +20,5 @@ trait HandlesEvents
      *
      * @return Event
      */
-    public function dispatch($event, ...$params) {}
+    public function dispatch($event, ...$params);
 }
