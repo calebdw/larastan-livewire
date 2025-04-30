@@ -1,6 +1,6 @@
 parameters:
-    stubFiles:
-        - stubs/Livewire/Features/SupportEvents/HandlesEvents.stub
+  stubFiles:
+    - stubs/Livewire/Features/SupportEvents/HandlesEvents.stub
 services:
   - class: CalebDW\LarastanLivewire\Properties\ComputedPropertyExtension
     tags: [phpstan.broker.propertiesClassReflectionExtension]
