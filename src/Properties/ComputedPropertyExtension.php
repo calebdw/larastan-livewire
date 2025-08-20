@@ -15,7 +15,7 @@ final class ComputedPropertyExtension implements PropertiesClassReflectionExtens
 {
     public function hasProperty(ClassReflection $classReflection, string $propertyName): bool
     {
-        if (! $classReflection->isSubclassOf(Component::class)) {
+        if (! $classReflection->is(Component::class)) {
             return false;
         }
 
@@ -33,7 +33,7 @@ final class ComputedPropertyExtension implements PropertiesClassReflectionExtens
             ->getNativeReflection()
             ->getMethod($camelPropertyName);
 
-        return ! empty($methodReflection->getAttributes(Computed::class));
+        return $methodReflection->getAttributes(Computed::class) !== [];
     }
 
     public function getProperty(
