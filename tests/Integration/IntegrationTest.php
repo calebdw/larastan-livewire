@@ -16,6 +16,8 @@ final class IntegrationTest extends PHPStanTestCase
     /** @return iterable<array{0: string, 1?: array<int, array<int, string>>}> */
     public static function dataIntegrationTests(): iterable
     {
+        yield [__DIR__.'/stubs/AnonymousComponent.php'];
+
         yield [__DIR__.'/stubs/UnusedComputedMethod.php', [
             12 => ['Method CalebDW\LarastanLivewire\Tests\Integration\stubs\UnusedComputedMethod::notAComputedProperty() is unused.'],
         ]];
