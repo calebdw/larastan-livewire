@@ -32,7 +32,7 @@ final class UnusedComputedMethodIgnoreExtension implements IgnoreErrorExtension
 
         preg_match('/::(.+)\(\)/', $error->getMessage(), $matches);
 
-        if (! $this->isComputedMethod($classReflection, $matches[1])) {
+        if (! $this->isComputedMethod($classReflection, $matches[1] ?? '')) {
             return false;
         }
 
