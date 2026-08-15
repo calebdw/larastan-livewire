@@ -10,7 +10,7 @@ use Livewire\Component;
 new class extends Component {
     public function render(): View
     {
-        return $this->view(['foo' => 'bar']);
+        return $this->view(['title' => 'Test']);
     }
 
     public function testCompiledMethods(): string
