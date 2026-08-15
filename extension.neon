@@ -4,6 +4,8 @@ parameters:
 services:
   - class: CalebDW\LarastanLivewire\Properties\ComputedPropertyExtension
     tags: [phpstan.broker.propertiesClassReflectionExtension]
+  - class: CalebDW\LarastanLivewire\Methods\CompiledComponentMethodExtension
+    tags: [phpstan.broker.methodsClassReflectionExtension]
   - class: CalebDW\LarastanLivewire\Errors\AnonymousComponentIgnoreExtension
     tags: [phpstan.ignoreErrorExtension]
   - class: CalebDW\LarastanLivewire\Errors\UnusedComputedMethodIgnoreExtension
