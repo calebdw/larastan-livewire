@@ -66,6 +66,27 @@ class ShowPost extends Component
 }
 ```
 
+### Page Component View Macros
+
+The fluent `title`/`layout`/etc. methods Livewire adds to `Illuminate\View\View` for
+[page components](https://livewire.laravel.com/docs/4.x/pages) are resolved and properly typed:
+
+```php
+<?php
+
+use Livewire\Component;
+
+class ShowPost extends Component
+{
+    public function render()
+    {
+        return view('livewire.show-post')
+            ->title($this->post->title)
+            ->layout('layouts::posts');
+    }
+}
+```
+
 ## Contributing
 
 Thank you for considering contributing! You can read the contribution guide [here](CONTRIBUTING.md).
