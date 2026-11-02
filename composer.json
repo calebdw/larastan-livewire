@@ -24,6 +24,7 @@
     "phpstan/phpstan": "^2.0"
   },
   "require-dev": {
+    "boundwize/structarmed": "^0.19.3",
     "phpunit/phpunit": "^11.5"
   },
   "autoload": {
@@ -52,10 +53,12 @@
     "test:phpstan:src": "phpstan analyze --ansi",
     "test:phpstan:integration": "phpstan analyze --ansi -c tests/phpstan-tests.neon",
     "test:phpunit": "phpunit --colors=always",
+    "test:structarmed": "structarmed analyze",
     "test": [
       "@test:phpstan:src",
       "@test:phpstan:integration",
-      "@test:phpunit"
+      "@test:phpunit",
+      "@test:structarmed"
     ]
   }
 }

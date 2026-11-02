@@ -6,7 +6,7 @@ namespace CalebDW\LarastanLivewire\Tests\Fixtures;
 
 use Livewire\Attributes\Computed;
 
-class TestComponentWithComputedProperties extends AbstractBaseComponent
+final class TestComponentWithComputedProperties extends AbstractBaseComponent
 {
     public function notAComputedProperty(): bool
     {
