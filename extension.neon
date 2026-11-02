@@ -1,11 +1,17 @@
 parameters:
   stubFiles:
     - stubs/Livewire/Features/SupportEvents/HandlesEvents.stub
+    - stubs/Livewire/LivewireManager.stub
 services:
   - class: CalebDW\LarastanLivewire\Properties\ComputedPropertyExtension
     tags: [phpstan.broker.propertiesClassReflectionExtension]
   - class: CalebDW\LarastanLivewire\Methods\CompiledComponentMethodExtension
     tags: [phpstan.broker.methodsClassReflectionExtension]
+  - class: CalebDW\LarastanLivewire\ReturnTypes\TestableTypeResolver
+  - class: CalebDW\LarastanLivewire\ReturnTypes\LivewireTestReturnTypeExtension
+    tags: [phpstan.broker.dynamicStaticMethodReturnTypeExtension]
+  - class: CalebDW\LarastanLivewire\ReturnTypes\LivewireManagerTestReturnTypeExtension
+    tags: [phpstan.broker.dynamicMethodReturnTypeExtension]
   - class: CalebDW\LarastanLivewire\Errors\AnonymousComponentIgnoreExtension
     tags: [phpstan.ignoreErrorExtension]
   - class: CalebDW\LarastanLivewire\Errors\UnusedComputedMethodIgnoreExtension

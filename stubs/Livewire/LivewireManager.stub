@@ -1,0 +1,20 @@
+<?php
+
+namespace Livewire;
+
+class LivewireManager
+{
+    /**
+     * Replaces the native `@template` so PHPStan does not report
+     * `argument.templateType` when `TComponent` cannot be inferred from the
+     * `string` union member. Return types are provided by the extensions.
+     *
+     * @param mixed $name
+     * @param array<string, mixed> $params
+     *
+     * @return mixed
+     */
+    public function test($name, $params = [])
+    {
+    }
+}

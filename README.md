@@ -66,6 +66,15 @@ class ShowPost extends Component
 }
 ```
 
+### Testing generics
+
+`Livewire::test()` and the fluent testing helpers (`actingAs()`, `withQueryParams()`, …) resolve the component generic, so `instance()` is the component you passed instead of a bare `Component`:
+
+```php
+/** @var \App\Livewire\Index $component */
+$component = Livewire::actingAs($user)->test(Index::class)->instance();
+```
+
 ## Contributing
 
 Thank you for considering contributing! You can read the contribution guide [here](CONTRIBUTING.md).

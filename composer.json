@@ -25,7 +25,7 @@
   },
   "require-dev": {
     "boundwize/structarmed": "^0.19.3",
-    "phpunit/phpunit": "^11.5"
+    "phpunit/phpunit": "^11.5 || ^12.5 || ^13.4"
   },
   "autoload": {
     "psr-4": {
