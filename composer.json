@@ -24,7 +24,7 @@
     "phpstan/phpstan": "^2.0"
   },
   "require-dev": {
-    "boundwize/structarmed": "^0.19.3",
+    "boundwize/structarmed": "^0.20.5",
     "phpunit/phpunit": "^11.5 || ^12.5 || ^13.4"
   },
   "autoload": {
